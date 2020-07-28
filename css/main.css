@@ -1,0 +1,135 @@
+:root{
+    --spash-bg-color: #181818;
+    --primary-1: #42567A;
+    --primary-2: #2C2C34;
+    --secondary-1: #38726C;
+    --secondary-2: #51467F;
+    --secondary-3: #D34E24;
+
+
+    --almost-white: #ECECEC;
+
+
+    --text-light: var(--almost-white);
+    --text-dark: #000;
+
+
+
+
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+
+    /* Default light text */
+    color: var(--text-light);
+
+    /* Default font: Roboto */
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.03em;
+
+
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2 {
+    font-size: 3.5em;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: .2em;
+}
+.h1-subheader {
+    font-weight: 300;
+    font-size: 1.7em;
+    line-height: 42px;
+}
+
+h3{
+    font-weight: 300;
+    font-size: 2em;
+    margin-top: .3em;
+}
+h4{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2em;
+    margin-top: .3em;
+}
+
+blockquote{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.3em;
+}
+p{
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+
+
+#splash{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.splash-content {
+    position: relative;
+    width: 67%;
+    background: var(--spash-bg-color);
+    padding: 15% 5% 0;
+}
+.splash-img-container {
+    width: 33%;
+    height: 100%;
+    background: grey;
+}
+.splash-quote {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    left: 0;
+    bottom: 10%;
+}
+
+#about-me, #portfolio, #contact {
+    padding: 16px 64px;
+}
+
+
+#about-me{
+    background: var(--primary-1);
+    display: flex;
+    flex-direction: row;
+}
+
+.about-me-content {
+    flex-basis: 40%;
+    margin-right: 10%;
+}
+.about-me-content > * {
+    width: 100%;
+}
+
+.about-me-skills {
+    background: var(--primary-2);
+    padding: 16px;
+    min-width: 300px;
+    max-width: 600px;
+    flex-grow: 2;
+}
+
+
+#portfolio{
+    background: var(--primary-2);
+}
+
+#contact {
+    background: var(--primary-1);
+}
