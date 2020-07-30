@@ -1,0 +1,63 @@
+:root{
+    --modal-width: calc(var(--content-width) - 15vh)
+}
+
+.modal {
+    cursor: pointer;
+    outline: none
+}
+.modal > summary {
+    outline: none;
+}
+
+
+.modal[open] > summary::before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    content: '';
+    z-index: 120;
+    background: rgba(27,31,35,0.5);
+}
+
+.modal> summary::-webkit-details-marker {
+    display:none;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    cursor: auto;
+
+    max-height: 80vh;
+    max-width: 90vw;
+    width: var(--modal-width);
+    padding: 16px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+
+
+    /*Center horizontally and give some padding on the top*/
+    top: 0;
+    left: 50%;
+    margin: 10vh auto;
+    position: fixed;
+    transform: translateX(-50%);
+
+    /*Make sure it is above normal content*/
+    z-index: 999;
+
+    /*Animation*/
+    animation-name: fadein;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

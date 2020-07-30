@@ -13,12 +13,16 @@
     --text-light: var(--almost-white);
     --text-dark: #000;
 
-
-
-
+    --nav-bar-height:80px;
+    --content-width: 1200px;
+    --padding-sections: 16px calc(50vw - var(--content-width) / 2);
+    --project-img-margin-left-right: 150px;
 }
 *{
     box-sizing: border-box;
+}
+html{
+    scroll-behavior:smooth
 }
 body{
     margin: 0;
@@ -59,6 +63,10 @@ h4{
     font-size: 1.2em;
     margin-top: .3em;
 }
+.header-line {
+    border-bottom: 1px solid rgba(236, 236, 236, 0.5);
+    width: 100%;
+}
 
 blockquote{
     font-family: 'Roboto Mono', monospace;
@@ -69,10 +77,77 @@ p{
     line-height: 1.5em;
 }
 
+/*Chips*/
+.chip, .chip-header {
+    background: var(--secondary-2);
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.chip-header {
+    background: var(--secondary-1);
+    width: 100%;
+}
+.chips-container {
+    padding-bottom: 1.5em;
+}
+/*--Chips*/
+
+/*Adjusted the anchor link to play nice with the navbar*/
+/*.anchor-adjuster::before{*/
+/*    display: block;*/
+/*    content: " ";*/
+/*    margin-top: calc(-0px);*/
+/*    height: var(--nav-bar-height);*/
+/*    visibility: hidden;*/
+/*    pointer-events: none;*/
+/*}*/
+:target::before {
+    display: block;
+    position: relative;
+    top: -120px;
+    visibility: hidden;
+}
+
+
+.navbar {
+    width: 100%;
+    height: var(--nav-bar-height);
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    top: 0;
+    z-index: 100;
+    background: grey;
+    background: var(--spash-bg-color);
+
+}
+.navbar > nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.nav-img-button {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: monospace;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*100 divided by the amount of nav items*/
+    flex-basis: calc(100% / 5);
+    flex-direction: column;
+    color: var(--text-light);
+}
+
+
 
 
 #splash{
-    height: 100vh;
+    height: calc(100vh - var(--nav-bar-height)) ;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -85,8 +160,10 @@ p{
     padding: 15% 5% 0;
 }
 .splash-img-container {
+    /*Initial display above header*/
+    z-index: 101;
     width: 33%;
-    height: 100%;
+    height: calc(100% + var(--nav-bar-height));
     background: grey;
 }
 .splash-quote {
@@ -99,7 +176,8 @@ p{
 }
 
 #about-me, #portfolio, #contact {
-    padding: 16px 64px;
+    /*padding: 16px 64px;*/
+    padding: var(--padding-sections)
 }
 
 
@@ -107,29 +185,103 @@ p{
     background: var(--primary-1);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 
 .about-me-content {
     flex-basis: 40%;
-    margin-right: 10%;
+    /*margin-right: 10%;*/
 }
 .about-me-content > * {
     width: 100%;
 }
 
 .about-me-skills {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+
     background: var(--primary-2);
-    padding: 16px;
+    padding: 16px 48px;
     min-width: 300px;
-    max-width: 600px;
-    flex-grow: 2;
+    max-width: 500px;
+    flex-grow: 1;
+    margin-top: 3em;
+    text-align: center;
+
 }
 
-
-#portfolio{
+#portfolio {
+    display: flex;
+    flex-direction: column;
     background: var(--primary-2);
+    align-items: center;
 }
+
+.projects-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.project {
+    margin: 32px 0;
+    min-height: 200px;
+    min-width: 400px;
+    background: var(--almost-white);
+    color: var(--text-dark);
+}
+
+.project > summary {
+    display: flex;
+    flex-direction: row;
+}
+.img-left {
+    margin-right: var(--project-img-margin-left-right);
+}
+.img-right{
+    flex-direction: row-reverse;
+    margin-left: 150px;
+}
+
+.project-summary{
+    flex-grow: 1;
+    padding: 8px 16px;
+}
+.project-img {
+    height: 200px;
+    width: 200px;
+    background: grey;
+}
+
 
 #contact {
+    text-align: center;
     background: var(--primary-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-line {
+    max-width: 500px;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.social-icon {
+    height: 64px;
+    width: 64px;
+    padding: 12px;
+    background: black;
+    border-radius: 10px;
+    margin: 0 8px;
 }

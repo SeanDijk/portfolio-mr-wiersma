@@ -9,12 +9,14 @@
 
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
 
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
 <section id="splash">
     <div class="splash-content">
         <h1>Marten Wiersma</h1>
@@ -26,6 +28,14 @@
         <img class="splash-img"/>
     </div>
 </section>
+
+<header class="navbar">
+    <nav>
+        <a class="nav-img-button" href="#about-me">[About me]</a>
+        <a class="nav-img-button" href="#portfolio">[Portfolio]</a>
+        <a class="nav-img-button" href="#contact">[Contact]</a>
+    </nav>
+</header>
 
 <section id="about-me">
     <div class="about-me-content">
@@ -44,7 +54,7 @@
         </p>
     </div>
     <div class="about-me-skills">
-        <h3>Skills</h3>
+        <h3 class="header-line">Skills</h3>
         <h4 class="chip-header">Project Management</h4>
         <div class="chips-container">
             <span class="chip">Scrum</span>
@@ -78,41 +88,60 @@
         <!-- todo radiogroup for filter-->
     </div>
 
+    <div class="projects-container">
+        <details class="project img-left modal">
+            <summary>
+                <img class="project-img"/>
+                <div class="project-summary">
+                    <h3>Cool project</h3>
+                    <ul>
+                        <li>Hello</li>
+                        <li>World</li>
+                        <li>:)</li>
+                    </ul>
+                </div>
+            </summary>
+            <section class="modal-content">
+                <h1>Cool project!</h1>
+                Hier kan je overige content voor je shizzle :)
+            </section>
+        </details>
+        <details class="project img-right modal">
+            <summary>
+                <img class="project-img"/>
+                <div class="project-summary">
+                    <h3>Cool project</h3>
+                    <ul>
+                        <li>Hello</li>
+                        <li>World</li>
+                        <li>:)</li>
+                    </ul>
+                </div>
+            </summary>
+            <section class="modal-content">
+                <h1>Cool project!</h1>
+                Hier kan je overige content voor je shizzle :)
+            </section>
+        </details>
+        <details class="project img-left modal">
+            <summary>
+                <img class="project-img"/>
+                <div class="project-summary">
+                    <h3>Cool project</h3>
+                    <ul>
+                        <li>Hello</li>
+                        <li>World</li>
+                        <li>:)</li>
+                    </ul>
+                </div>
+            </summary>
+            <section class="modal-content">
+                <h1>Cool project!</h1>
+                Hier kan je overige content voor je shizzle :)
+            </section>
+        </details>
+    </div>
 
-    <div class="project img-left">
-        <img class="project-img"/>
-        <div class="project-summary">
-            <h3>Cool project</h3>
-            <ul>
-                <li>Hello</li>
-                <li>World</li>
-                <li>:)</li>
-            </ul>
-        </div>
-
-    </div>
-    <div class="project img-right">
-        <img class="project-img"/>
-        <div class="project-summary">
-            <h3>Cool project</h3>
-            <ul>
-                <li>Hello</li>
-                <li>World</li>
-                <li>:)</li>
-            </ul>
-        </div>
-    </div>
-    <div class="project img-left">
-        <img class="project-img"/>
-        <div class="project-summary">
-            <h3>Cool project</h3>
-            <ul>
-                <li>Hello</li>
-                <li>World</li>
-                <li>:)</li>
-            </ul>
-        </div>
-    </div>
 
 </section>
 
@@ -120,11 +149,14 @@
     <h2>Contact</h2>
     <p>Hello world!</p>
 
-    <h3>Around the web</h3>
-    <div class="socials"></div>
+    <h3 class="header-line contact-line">Around the web</h3>
+    <div class="socials">
+        <a href="#"><img class="social-icon" src="img/li.svg" alt="LinkedIn"/></a>
+        <a href="#"><img class="social-icon" src="img/gh.svg" alt="Github"/></a>
+        <a href="#"><img class="social-icon" src="img/so.svg" alt="StackoverFlow"/></a>
+    </div>
 </section>
 
 
 </body>
-
 </html>
