@@ -18,11 +18,15 @@
     --padding-sections: 16px calc(50vw - var(--content-width) / 2);
     --project-img-margin-left-right: 150px;
 }
+
 *{
     box-sizing: border-box;
 }
 html{
-    scroll-behavior:smooth
+    scroll-behavior:smooth;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 body{
     margin: 0;
@@ -103,12 +107,6 @@ p{
 /*    visibility: hidden;*/
 /*    pointer-events: none;*/
 /*}*/
-:target::before {
-    display: block;
-    position: relative;
-    top: -120px;
-    visibility: hidden;
-}
 
 
 .navbar {
@@ -230,32 +228,48 @@ p{
 }
 .project {
     margin: 32px 0;
-    min-height: 200px;
     min-width: 400px;
     background: var(--almost-white);
     color: var(--text-dark);
+
+
+    height: 200px;
 }
 
 .project > summary {
     display: flex;
     flex-direction: row;
+    align-items: stretch;
+    justify-self: stretch;
+    min-height: 200px;
+
+    height: 100%;
 }
 .img-left {
     margin-right: var(--project-img-margin-left-right);
 }
 .img-right{
+    margin-left: var(--project-img-margin-left-right);
+}
+
+.img-right > summary {
     flex-direction: row-reverse;
-    margin-left: 150px;
 }
 
 .project-summary{
+
     flex-grow: 1;
     padding: 8px 16px;
+    height: 100%;
 }
 .project-img {
-    height: 200px;
-    width: 200px;
-    background: grey;
+    align-self: stretch;
+    height: 100%;
+    width: auto;
+}
+.project-img > img {
+    width: auto;
+    height: 100%;
 }
 
 
@@ -284,4 +298,51 @@ p{
     background: black;
     border-radius: 10px;
     margin: 0 8px;
+}
+
+
+@media (max-width: 1248px) {
+    :root {
+        --padding-sections: 16px 32px;
+    }
+}
+
+@media (max-width: 950px) {
+    :root{
+        --project-img-margin-left-right: 0px;
+    }
+
+    #about-me{
+        flex-direction: column;
+        /*justify-content: center;*/
+        align-items: center;
+    }
+
+    .about-me-skills {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .project {
+        height: auto;
+    }
+    .project > summary {
+        flex-direction: column;
+    }
+
+    .project-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    /*.project-img {*/
+    /*    max-width: 300px;*/
+    /*    width: 100%;*/
+    /*    height: auto;*/
+    /*}*/
+
+    .project-summary {
+
+    }
 }
