@@ -1,5 +1,5 @@
 :root{
-    --spash-bg-color: #181818;
+    --splash-bg-color: #181818;
     --primary-1: #42567A;
     --primary-2: #2C2C34;
     --secondary-1: #38726C;
@@ -117,7 +117,7 @@ p{
     top: 0;
     z-index: 100;
     background: grey;
-    background: var(--spash-bg-color);
+    background: var(--splash-bg-color);
 
 }
 .navbar > nav {
@@ -154,7 +154,7 @@ p{
 .splash-content {
     position: relative;
     width: 67%;
-    background: var(--spash-bg-color);
+    background: var(--splash-bg-color);
     padding: 15% 5% 0;
 }
 .splash-img-container {
@@ -162,7 +162,56 @@ p{
     z-index: 101;
     width: 33%;
     height: calc(100% + var(--nav-bar-height));
-    background: grey;
+    position: relative;
+    background: var(--splash-bg-color);
+}
+/*.splash-img-container:before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    z-index: -1;*/
+
+/*    background-image: url('../img/placeholder.jpeg');*/
+/*    background-size: cover;*/
+/*    background-repeat: no-repeat;*/
+/*    width: auto;*/
+/*    height: 100%;*/
+
+/*    -webkit-filter: blur(5px);*/
+/*    -ms-filter: blur(5px);*/
+/*    filter: blur(5px);*/
+/*}*/
+
+
+.splash-img-bg {
+    display: block;
+
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    filter: blur(5px);
+
+    /*border-style: solid;*/
+    /*border-left: 10px #42567A;*/
+    padding-left: 2px;
+    padding-bottom: 2px;
+}
+
+.splash-img {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    height: auto;
+    width: 100%;
+    position: absolute;
+
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 .splash-quote {
     position: absolute;
@@ -300,6 +349,18 @@ p{
     margin: 0 8px;
 }
 
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    background: var(--secondary-2);
+    color: lightgray;
+}
+.footer > span> a {
+    color: inherit;
+}
+
 
 @media (max-width: 1248px) {
     :root {
@@ -311,6 +372,32 @@ p{
     :root{
         --project-img-margin-left-right: 0px;
     }
+
+    #splash {
+        position: relative;
+        display: block;
+    }
+
+    .splash-content{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.6;
+
+    }
+
+    .splash-img-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+
 
     #about-me{
         flex-direction: column;
@@ -326,6 +413,7 @@ p{
 @media (max-width: 600px) {
     .project {
         height: auto;
+        min-width: unset;
     }
     .project > summary {
         flex-direction: column;
